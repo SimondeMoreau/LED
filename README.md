@@ -43,6 +43,6 @@ Here's how to use it:
 python test.py [dataset_root] [LED/HB] [experience_name]
 ```
 ## License 
-Code is released under the Apache 2.0 license. 
+<> Code is released under the Apache 2.0 license. 
 
 Dataset is released under TO BE ADDED (ANONYMIZED)

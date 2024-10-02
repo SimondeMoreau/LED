@@ -31,7 +31,7 @@ The dataset is available at : TO BE ADDED
     ```
 
 ## Training
-To train the a model, use the `train.py` script. 
+To train a model, use the `train.py` script. 
 Here's how to use it:
 ```
 python train.py [dataset_root] [LED/HB]

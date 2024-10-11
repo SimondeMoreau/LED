@@ -98,7 +98,7 @@ def create_figures(data, target, output, max_depth):
 def get_args_train():
     parser = argparse.ArgumentParser(description='Train a Encoder-Decoder model on DriveSim dataset')
     parser.add_argument('dataset_root', type=str, help='The root directory of the dataset')
-    parser.add_argument('dataset', type=str, help='Part of the dataset to use (LED or HB)')
+    parser.add_argument('dataset', type=str, help='Part of the dataset to use (Pattern or HB)')
     parser.add_argument('--max_depth', type=int, help='The maximum depth of the dataset', default=100)
     parser.add_argument('--batch_size', type=int, help='The batch size', default=32)
     parser.add_argument('--epochs', type=int, help='The number of epochs', default=70)
@@ -108,13 +108,13 @@ def get_args_train():
     parser.add_argument('--log_dir', type=str, help='The directory to save the tensorbard logs', default='runs')
     parser.add_argument('--device', type=str, help='The device to use (cpu or cuda)', default='cuda')
     parser.add_argument('--checkpoint', type=str, help='The checkpoint to load', default=None)
-    parser.add_argument('--saving_interval', type=int, help='The interval to save the model', default=10)
+    parser.add_argument('--checkpoint_interval', type=int, help='Number of epochs between checkpoint saving', default=10)
     return parser.parse_args()
 
 def get_args_test():
     parser = argparse.ArgumentParser(description='Test a Encoder-Decoder model on DriveSim dataset')
     parser.add_argument('dataset_root', type=str, help='The root directory of the dataset')
-    parser.add_argument('dataset', type=str, help='Part of the dataset to use (LED or HB)')
+    parser.add_argument('dataset', type=str, help='Part of the dataset to use (Pattern or HB)')
     parser.add_argument('experiment_name', type=str, help='The name of the experiment')
     parser.add_argument('--checkpoint', type=str, help='The checkpoint to load', default="best_model.pth")
     parser.add_argument('--max_depth', type=int, help='The maximum depth of the dataset', default=100)

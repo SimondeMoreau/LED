@@ -1,5 +1,5 @@
 import torch
-from dataset.DriveSimDataset import DriveSimDataset
+from dataset.DriveSimDataset import DriveSimDepthDataset
 from model import UNet
 import numpy as np
 from torchvision.transforms import ToTensor
@@ -42,16 +42,11 @@ else:
 print("Experiment name:", experiment_name)
 
 # loading the dataset
-drivesim_dir = os.path.join(args.dataset_root, gen_type)
-train_dirs = glob(os.path.join(drivesim_dir,"gen15_*")) + glob(os.path.join(drivesim_dir,"china_*"))
-val_dirs = glob(os.path.join(drivesim_dir,"hamburg_*"))
-test_dirs = glob(os.path.join(drivesim_dir,"wuppertal_*"))
-
 transform = transforms.Compose([ToTensor(), transforms.CenterCrop(640),transforms.Resize(320,antialias=True)])
 
-dataset_train = DriveSimDataset(train_dirs, "ldr_color", "distance_to_image_plane",transform=transform, target_transform=transform, max_depth=max_depth,max_file=5000, max_depth_placeholder=max_depth)
-dataset_val = DriveSimDataset(val_dirs, "ldr_color", "distance_to_image_plane", max_file=5000,transform=transform, target_transform=transform, max_depth=max_depth, max_depth_placeholder=max_depth)
-dataset_test = DriveSimDataset(test_dirs, "ldr_color", "distance_to_image_plane", max_file=5000,transform=transform, target_transform=transform, max_depth=max_depth, max_depth_placeholder=max_depth)
+dataset_train = DriveSimDepthDataset(args.dataset_root, args.dataset, "train",transform=transform, target_transform=transform, max_depth=max_depth,max_file=-1, max_depth_placeholder=max_depth)
+dataset_test = DriveSimDepthDataset(args.dataset_root, args.dataset, "test",transform=transform, target_transform=transform, max_depth=max_depth,max_file=-1, max_depth_placeholder=max_depth)
+dataset_val = DriveSimDepthDataset(args.dataset_root, args.dataset, "val",transform=transform, target_transform=transform, max_depth=max_depth,max_file=-1, max_depth_placeholder=max_depth)
 
 ltrain = len(dataset_train)
 ltest = len(dataset_test)
@@ -201,8 +196,8 @@ for epoch in range(epoch_start,epochs+1):
             
         print("Best model saved at epoch", epoch)
 
-    # save the model every saving_interval epochs
-    if epoch % args.saving_interval == 0:
+    # save the model every checkpoint_interval epochs
+    if epoch % args.checkpoint_interval == 0:
         torch.save({
                 'epoch': epoch,
                 'model_state_dict': model.state_dict(),

@@ -1,5 +1,5 @@
 import torch
-from dataset.DriveSimDataset import DriveSimDataset
+from dataset.DriveSimDataset import DriveSimDepthDataset
 from model import UNet
 import numpy as np
 from torchvision.transforms import ToTensor
@@ -39,9 +39,8 @@ if(not os.path.exists(checkpoint_path)):
     sys.exit(1)
 
 # loading the dataset
-test_dirs = glob(os.path.join(drivesim_dir,"wuppertal_*"))
 transform = transforms.Compose([ToTensor(), transforms.CenterCrop(640),transforms.Resize(320,antialias=True)])
-dataset_test = DriveSimDataset(test_dirs, "ldr_color", "distance_to_image_plane", max_file=5000,transform=transform, target_transform=transform, max_depth=max_depth,max_depth_placeholder=max_depth)
+dataset_test = DriveSimDepthDataset(args.dataset_root, args.dataset, "test",transform=transform, target_transform=transform, max_depth=max_depth,max_file=-1, max_depth_placeholder=max_depth)
 ltest = len(dataset_test)
 print("Test :",ltest)
 

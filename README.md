@@ -2,7 +2,7 @@
 
 Official implementation of the method LED and code for the Nighttime Synthetic Drive Dataset.
 
-![Paper Concept](assets/paper_concept.png)
+![Paper Concept](assets/paper_concept_v2.png)
 
 If you use our dataset in your research, please consider citing:
 ```

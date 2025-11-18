@@ -1,18 +1,24 @@
 # LED : Light Enhanced Depth Estimation at Night
 
-Official implementation of the encoder-decoder in LED. Code, information and download link for the Nighttime Synthetic Drive Dataset.
 
 [Arxiv](https://arxiv.org/abs/2409.08031) | [Project Page](https://simondemoreau.github.io/LED/)
 
-![Paper Concept](assets/paper_concept.png)
+[![Paper](https://img.shields.io/badge/arXiv-2409.08031-brightgreen)](https://arxiv.org/abs/2409.08031)
+[![Conference](https://img.shields.io/badge/BMVC-2025-blue)](https://bmvc2025.bmva.org/)
+[![Project Page](https://img.shields.io/badge/Project-page-red)](https://simondemoreau.github.io/LED/)
+
+![Paper Concept](assets/concept_paper.png)
+
+
+Official implementation of the encoder-decoder in LED. Code, information and download link for the Nighttime Synthetic Drive Dataset.
 
 If you use our dataset in your research, please consider citing:
 ```bibtex
-@article{deMoreau2024led,
-    title = {LED: Light Enhanced Depth Estimation at Night},
-    author = {De Moreau, Simon and Almehio, Yasser and Bursuc, Andrei and El-Idrissi, Hafid and Stanciulescu, Bogdan and Moutarde, Fabien},
-    journal = {arXiv preprint arXiv:2409.08031},
-    year = {2024},
+@inproceedings{deMoreau2024led,
+author    = {Simon de Moreau and Yasser Almehio and Andrei Bursuc and Hafid EL IDRISSI and Bogdan Stanciulescu and Fabien Moutarde},
+title     = {LED: Light Enhanced Depth Estimation at Night},
+booktitle = {BMVC},
+year      = {2025},
 }
 ```
 ## Dataset

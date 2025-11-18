@@ -1,8 +1,5 @@
 # LED : Light Enhanced Depth Estimation at Night
 
-
-[Arxiv](https://arxiv.org/abs/2409.08031) | [Project Page](https://simondemoreau.github.io/LED/)
-
 [![Paper](https://img.shields.io/badge/arXiv-2409.08031-brightgreen)](https://arxiv.org/abs/2409.08031)
 [![Conference](https://img.shields.io/badge/BMVC-2025-blue)](https://bmvc2025.bmva.org/)
 [![Project Page](https://img.shields.io/badge/Project-page-red)](https://simondemoreau.github.io/LED/)

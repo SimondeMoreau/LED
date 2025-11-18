@@ -155,7 +155,7 @@
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video> -->
-      <img src="static/images/paper_concept.png" alt="LED Overview">
+      <img src="static/images/concept_paper.png" alt="LED Overview">
       <h2 class="subtitle has-text-centered">
         
       </h2>
@@ -173,11 +173,13 @@
         <div class="content has-text-justified">
           <p>
             Nighttime camera-based depth estimation is a highly challenging task, especially for autonomous driving applications, where accurate depth perception is essential for ensuring safe navigation.
-We aim to improve the reliability of perception systems at night time, where models trained on daytime data often fail in the absence of precise but costly LiDAR sensors.
-In this work, we introduce Light Enhanced Depth (LED), a novel cost-effective approach that significantly improves depth estimation in low-light environments by harnessing a pattern projected by high definition headlights available in modern vehicles. 
-LED leads to significant performance boosts across multiple depth-estimation architectures (encoder-decoder, Adabins, DepthFormer) both on synthetic and real datasets.
-Furthermore, increased performances beyond illuminated areas reveal a holistic enhancement in scene understanding.
-Finally, we release the Nighttime Synthetic Drive Dataset, a new synthetic and photo-realistic nighttime dataset, which comprises 49,990 comprehensively annotated images. 
+            Models trained on daytime data often fail in the absence of precise but costly LiDAR.
+            Even vision foundation models trained on large amounts of data are unreliable in low-light conditions. 
+            In this work, we aim to improve the reliability of perception systems at night time. 
+            To this end, we introduce Light Enhanced Depth (LED), a novel, cost-effective approach that significantly improves depth estimation in low-light environments by harnessing a pattern projected by high definition headlights available in modern vehicles. 
+            LED leads to significant performance boosts across multiple depth-estimation architectures (encoder-decoder, Adabins, DepthFormer, Depth Anything V2) both on synthetic and real datasets. 
+            Furthermore, increased performances beyond illuminated areas reveal a holistic enhancement in scene understanding. 
+            Finally, we release the Nighttime Synthetic Drive Dataset, a synthetic and photo-realistic nighttime dataset, which comprises 49,990 comprehensively annotated images.
           </p>
         </div>
       </div>
@@ -349,12 +351,12 @@ Finally, we release the Nighttime Synthetic Drive Dataset, a new synthetic and p
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code class="c0py">@article{deMoreau2024led,
-      title = {LED: Light Enhanced Depth Estimation at Night},
-      author = {De Moreau, Simon and Almehio, Yasser and Bursuc, Andrei and El-Idrissi, Hafid and Stanciulescu, Bogdan and Moutarde, Fabien},
-      journal = {arXiv preprint arXiv:2409.08031},
-      year = {2024},
-    }</code></pre>
+    <pre><code class="c0py">@inproceedings{deMoreau2024led,
+  author    = {Simon de Moreau and Yasser Almehio and Andrei Bursuc and Hafid EL IDRISSI and Bogdan Stanciulescu and Fabien Moutarde},
+  title     = {LED: Light Enhanced Depth Estimation at Night},
+  booktitle = {BMVC},
+  year      = {2025},
+}</code></pre>
   </div>
 </section>
 <script src="https://cdn.jsdelivr.net/gh/Djongov/cClipboard@v2.1/cClipboard.min.js"></script>
